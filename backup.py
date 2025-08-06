@@ -37,4 +37,4 @@ def crear_backup(exclude_dirs: list = None):
         
 if __name__ == "__main__":
     # Excluir el directorio 'backup' del backup
-    crear_backup(exclude_dirs=['testing'])
+    crear_backup(exclude_dirs=['backup'])
