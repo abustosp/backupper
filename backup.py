@@ -24,13 +24,15 @@ def crear_backup(exclude_dirs: list = None):
             
     # filtrar los directorios excluidos
     directorios = [d for d in directorios if d not in exclude_dirs]
+    
+    os.makedirs('backup', exist_ok=True)
 
     # iterar sobre los directorios
     for carpeta in directorios:
         print(carpeta)
         # crear un tar -zcvf del directorio agregandole la fecha actual
         nombre_archivo = f"{carpeta}_{fecha_actual}.tar.gz"
-        comando = f"tar -zcf {nombre_archivo} {carpeta}"
+        comando = f"tar -zcf backup/{nombre_archivo} {carpeta}"
         os.system(comando)
         
 if __name__ == "__main__":
